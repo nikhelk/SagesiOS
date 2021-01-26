@@ -15,10 +15,15 @@ struct ContentView: View {
     @State private var isEditing = false
     var body: some View {
         
-
+        ZStack {
+            Color.white
+                .ignoresSafeArea()
+        
         VStack(alignment: .leading){
+           
             Text("Email or Username")
                 .font(.largeTitle)
+                .foregroundColor(.black)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.leading)
                 .padding()
@@ -33,6 +38,7 @@ struct ContentView: View {
                 }
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .padding()
+            .colorInvert()
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
             
@@ -42,6 +48,7 @@ struct ContentView: View {
             
             Text("Password")
                 .font(.largeTitle)
+                .foregroundColor(.black)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.leading)
                 .padding()
@@ -52,6 +59,7 @@ struct ContentView: View {
                 )
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .padding()
+            .colorInvert()
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
                 
@@ -59,7 +67,7 @@ struct ContentView: View {
             Button(action: validate) {
                 Text("Sign in")
             }
-            .foregroundColor(.black)
+            .foregroundColor(.blue)
             .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
             .padding()
             .buttonStyle(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=Button Style@*/DefaultButtonStyle()/*@END_MENU_TOKEN@*/)
@@ -70,7 +78,7 @@ struct ContentView: View {
     }
 }
 
-
+}
 
 
 struct ContentView_Previews: PreviewProvider{
